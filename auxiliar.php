@@ -29,10 +29,10 @@ function selected(?string $o, string $v): string
 
 function compruebaParametros($op1, $op2, $op, array &$error): void
 {
-    if (isset($op1, $op2, $op)) {
+    if ((isset($op1, $op2, $op)) AND !($op1 === '' && $op2 === '') {
         return;
     }
-    if ($op1 !== null || $op2 !== null || $op !== null) {
+    if ($op1 !== null || $op2 !== null || $op !== null) OR ($op1 === '' || $op2 === ''){
         $error[] = 'Falta algún parámetro';
     }
     throw new Exception;
